@@ -1,6 +1,7 @@
 #!/bin/bash
 cd /home/container
 
+# Fixes file names
 ./fixinstall.sh
 
 # Replace Startup Variables
