@@ -7,7 +7,7 @@ RUN dpkg --add-architecture i386 \
   && apt install -y \
     libstdc++6:i386 \
     libncurses5:i386 \
-  && rm -rf /var/lib/apt/lists/*
+  && rm -rf /var/lib/apt/lists/* \
   && adduser -D -h /home/container container
 
 USER container
