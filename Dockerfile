@@ -8,6 +8,9 @@ RUN dpkg --add-architecture i386 \
     libstdc++6:i386 \
     libncurses5:i386 \
   && rm -rf /var/lib/apt/lists/* \
+  && echo "65.112.87.186  bfvietnam.available.gamespy.com" >> /etc/hosts \
+  && echo "65.112.87.186  bfvietnam.master.gamespy.com" >> /etc/hosts \
+  && echo "65.112.87.186  bfvietnam.ms0.gamespy.com" >> /etc/hosts \
   && adduser -D -h /home/container container
 
 USER container
