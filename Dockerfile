@@ -9,6 +9,7 @@ RUN apt update -y \
     python-pip \
     libffi-dev \
     gunicorn \
+    python-gevent \
   && wget -qO- https://raw.githubusercontent.com/CTFd/CTFd/master/requirements.txt | pip --no-cache-dir install -r /dev/stdin \
   && rm -rf /var/lib/apt/lists/* \
   && adduser -D -h /home/container container
