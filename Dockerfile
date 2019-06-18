@@ -1,4 +1,4 @@
-FROM python:3-alpine
+FROM python:3-slim
 
 MAINTAINER Renaud Gaspard, <gaspardrenaud@hotmail.com>
 
