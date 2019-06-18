@@ -1,17 +1,9 @@
-FROM ubuntu:bionic
+FROM python:3
 
 MAINTAINER Renaud Gaspard, <gaspardrenaud@hotmail.com>
 
-RUN apt update -y \
-  && apt install -y \
-    build-essential \
-    python-dev \
-    python-pip \
-    libffi-dev \
-    gunicorn \
-    python-gevent \
+RUN pip --no-cache-dir install gunicorn gevent
   && wget -qO- https://raw.githubusercontent.com/CTFd/CTFd/master/requirements.txt | pip --no-cache-dir install -r /dev/stdin \
-  && rm -rf /var/lib/apt/lists/* \
   && adduser -D -h /home/container container
 
 USER container
