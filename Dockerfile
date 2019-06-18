@@ -8,7 +8,7 @@ RUN dpkg --add-architecture i386 \
     libstdc++6:i386 \
     libncurses5:i386 \
   && rm -rf /var/lib/apt/lists/* \
-  && adduser -D -h /home/container container
+  && useradd -d /home/container -m container
 
 USER container
 ENV USER=container HOME=/home/container
