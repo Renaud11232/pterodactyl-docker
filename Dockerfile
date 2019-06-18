@@ -2,7 +2,7 @@ FROM python:3-alpine
 
 MAINTAINER Renaud Gaspard, <gaspardrenaud@hotmail.com>
 
-RUN apk add --no-cache build-base libffi-dev \
+RUN apk add --no-cache build-base libffi-dev openssl-dev \
   && pip --no-cache-dir install gunicorn gevent \
   && wget -qO- https://raw.githubusercontent.com/CTFd/CTFd/master/requirements.txt | pip --no-cache-dir install -r /dev/stdin \
   && adduser -D -h /home/container container
