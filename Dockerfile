@@ -9,7 +9,7 @@ RUN apt update -y \
     python-pip \
     libffi-dev \
     gunicorn \
-  && wget -qO- https://raw.githubusercontent.com/CTFd/CTFd/master/requirements.txt | pip install -r /dev/stdin
+  && wget -qO- https://raw.githubusercontent.com/CTFd/CTFd/master/requirements.txt | pip install -r /dev/stdin \
   && rm -rf /var/lib/apt/lists/* \
   && adduser -D -h /home/container container
 
