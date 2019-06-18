@@ -2,11 +2,14 @@ FROM ubuntu:bionic
 
 MAINTAINER Renaud Gaspard, <gaspardrenaud@hotmail.com>
 
-RUN dpkg --add-architecture i386 \
-  && apt update -y \
+RUN apt update -y \
   && apt install -y \
-    libstdc++6:i386 \
-    libncurses5:i386 \
+    build-essential \
+    python-dev \
+    python-pip \
+    libffi-dev \
+    gunicorn \
+  && wget -qO- https://raw.githubusercontent.com/CTFd/CTFd/master/requirements.txt | pip install -r /dev/stdin
   && rm -rf /var/lib/apt/lists/* \
   && adduser -D -h /home/container container
 
