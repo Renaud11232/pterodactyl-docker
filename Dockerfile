@@ -2,7 +2,8 @@ FROM node:lts-alpine
 
 MAINTAINER Renaud Gaspard, <gaspardrenaud@hotmail.com>
 
-RUN adduser -D -h /home/container container
+RUN apk add --no-cache git\
+    && adduser -D -h /home/container container
 
 USER container
 ENV USER=container HOME=/home/container
