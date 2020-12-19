@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:lts-alpine
 
 MAINTAINER Renaud Gaspard, <gaspardrenaud@hotmail.com>
 
